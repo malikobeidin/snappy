@@ -177,7 +177,7 @@ class ManifoldTable(object):
         except:
             return False
         
-    def __getitem__(self, index):
+    def __getitem__(self, index): 
         if isinstance(index, slice):
             if index.step:
                 raise IndexError('Slices with steps are not supported.')
@@ -234,7 +234,7 @@ class ManifoldTable(object):
             raise IndexError('%s is not a valid index type for manifolds.'%
                              type(index))
         return matches[0]
-    
+   
     def _manifold_factory(self, row, M=None):
         """
         Factory for "select name, triangulation" queries.
@@ -382,6 +382,7 @@ class ManifoldTable(object):
 
     def random(self):
         return self[random.randrange(len(self))]
+
 
 
 # The below function is used to add ManifoldTables defined in external
